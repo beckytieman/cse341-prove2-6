@@ -106,7 +106,7 @@ body {
 .product__price {
     text-align: center;
     color: #4d4d4d;
-    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .product__description {

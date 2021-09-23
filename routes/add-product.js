@@ -12,7 +12,7 @@ router.post('/add-product',(req, res, next) => {
     
     //let newProduct = {title: req.body.title, description: req.body.description}; //multiple entries
     //products.push(newProduct);
-    products.push({title: req.body.title});
+    products.push({title: req.body.title, price: req.body.price, description: req.body.description});
     // console.log(products);
     
     res.redirect('/');
