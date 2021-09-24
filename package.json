@@ -1,11 +1,17 @@
 {
   "name": "cse341-prove2-6",
   "version": "1.0.0",
-  "description": "CSE341 E-commerce project for week 2-6",
+  "description": "CSE prove02-06",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,13 +22,5 @@
   "bugs": {
     "url": "https://github.com/beckytieman/cse341-prove2-6/issues"
   },
-  "homepage": "https://github.com/beckytieman/cse341-prove2-6#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+  "homepage": "https://github.com/beckytieman/cse341-prove2-6#readme"
 }
