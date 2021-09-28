@@ -1,9 +1,9 @@
-<%- include('includes/head.ejs') %>
+<%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-    <%- include('includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
     <main>
         <% if (prods.length > 0) {%>
             <div class="grid">
@@ -12,19 +12,19 @@
                         <header class="card__header">
                             <h1 class="product__title"><%= product.title %></h1>
                         </header>
+                        <div class="card__image">
+                            <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                        </div>
                         <div class="card__content">
-                            <h2 class="product__price"><%= product.price %></h2>
+                            <h2 class="product__price">$<%= product.price %></h2>
                             <p class="product__description"><%= product.description %></p>
                         </div>
-                        <!-- <div class="container">
-                            <form class="" action="/remove-product/" method="POST">
-                              <div class="">
-                                <label for="title">Remove Product from list</label>
-                                <input type="hidden" name="title" value="<%= product.title %>">
-                              </div>
-                              <button type="submit">Remove Product</button>
+                        <div class="card__actions">
+                            <a href="edit-product.ejs" class="btn">Edit</a>
+                            <form action="delete-product" method="POST">
+                                <button class="btn" type="submit">Delete</button>
                             </form>
-                        </div> -->
+                        </div>
             </div>
                 <% } %>        
             </div>
@@ -33,4 +33,4 @@
             <% } %>
             
     </main>
-    <%- include('includes/end.ejs') %>   
+    <%- include('../includes/end.ejs') %>   

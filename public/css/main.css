@@ -42,7 +42,7 @@ body {
   .main-header__item a:hover,
   .main-header__item a:active,
   .main-header__item a.active {
-    color: #29a8a8;
+    color: #117077;
   }
   
   .grid {
@@ -67,6 +67,15 @@ body {
   .card__content p {
     margin: 0;
   }
+
+  .card__image {
+    width: 100%;
+  }
+  
+  .card__image img {
+    width: 100%;
+  }
+  
   
   .card__actions {
       padding: 1rem;
@@ -120,19 +129,22 @@ body {
 
 .form-control label,
 .form-control input,
+.form-control textarea,
 .form-control select {
     display: block;
     width: 100%;
     margin-bottom: 0.25rem;
 }
 
-.form-control input {
+.form-control input,
+.form-control textarea {
     border: 1px solid #a1a1a1;
     font: inherit;
     border-radius: 2px;
 }
 
-.form-control input:focus {
+.form-control input:focus,
+.form-control textarea:focus {
     outline-color: #00695c;
 }
 .product-form {
