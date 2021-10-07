@@ -5,6 +5,20 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000; 
 
+
+const cors = require('cors') // Place this with other requires (like 'path' and 'express')
+
+const corsOptions = {
+    origin: "https://cse341-tieman-project.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://<username>:<username>@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
+
+
+
 const errorController = require('./controllers/error');
 
 const User = require('./models/user');
@@ -45,7 +59,8 @@ app.use(errorController.get404)
 
 mongoose
 .connect(
-  'mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cluster0.k9l5x.mongodb.net/shop?retryWrites=true&w=majority')
+  MONGODB_URL, options)
+  //'mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cluster0.k9l5x.mongodb.net/shop?retryWrites=true&w=majority')
 .then(result => {
   User.findOne().then(user => {
     if (!user) {
