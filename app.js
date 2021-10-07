@@ -22,7 +22,7 @@ const options = {
 };
 
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cse341cluster-3dwlw.mongodb.net/shop?retryWrites=true&w=majority";
 
 
 
@@ -31,9 +31,6 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 const app = express();
-
-
-
 
 //Routes
 const adminRoutes = require('./routes/admin');
@@ -47,7 +44,7 @@ app
   .set('view engine', 'ejs')
   .use(bodyParser.urlencoded({extended: false}))
   .use((req, res, next) => {
-    User.findById("615dee974f891a5ba0b5891f")
+    User.findOne()
     .then(user => {
       req.user = user;
       next();
