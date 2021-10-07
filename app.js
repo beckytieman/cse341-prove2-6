@@ -68,7 +68,7 @@ app.use(errorController.get404)
 
 mongoose
 .connect(
-  MONGODB_URL, options)
+  MONGODB_URL)
   //'mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cluster0.k9l5x.mongodb.net/shop?retryWrites=true&w=majority')
 .then(result => {
   User.findOne().then(user => {
