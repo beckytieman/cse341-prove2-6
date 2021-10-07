@@ -13,9 +13,16 @@ const corsOptions = {
     optionsSuccessStatus: 200
 };
 
+const options = {
+  // useUnifiedTopology: true,
+  // useNewUrlParser: true,
+  // useCreateIndex: true,
+  // useFindAndModify: false,
+  // family: 4
+};
 
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://<username>:<username>@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
 
 
 
@@ -32,6 +39,7 @@ const app = express();
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
+app.use(cors(corsOptions));
 //template engine
 app
   .use(express.static(path.join(__dirname, 'public'))) //css
@@ -53,7 +61,7 @@ app
    
 app.use(errorController.get404)
 
-app.use(cors(corsOptions));
+
 // mongoConnect(() => {
 //   app.listen(PORT);
 // });
