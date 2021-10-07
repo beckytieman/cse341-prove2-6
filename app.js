@@ -61,7 +61,7 @@ app.use(cors(corsOptions));
 //   app.listen(PORT);
 // });
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cluster0.k9l5x.mongodb.net/shop?retryWrites=true&w=majorit";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cluster0.k9l5x.mongodb.net/shop?retryWrites=true&w=majority";
 //"mongodb+srv://tieman-user_OG:Sti8WMGOLgxW5AyD@cse341cluster-3dwlw.mongodb.net/shop?retryWrites=true&w=majority";
 
 mongoose
